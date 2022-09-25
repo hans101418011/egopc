@@ -1,0 +1,128 @@
+#productDetl {
+	width: 80%;
+	margin: 16px auto;
+	display: flex;
+	flex-direction: row;
+	font-size: 22px;
+}
+#productDetl .pImg {
+}
+
+#productDetl .contain {
+	position: relative;
+	width: 50%;
+	padding: 8px;
+}
+#productDetl .contain .pName {
+	font-size: 32px;
+}
+#productDetl .pName::before {
+	content: "品名 ";
+}
+#productDetl .contain .pSpec,
+.pDesc {
+	padding-top: 16px;
+	font-size: 28px;
+}
+#productDetl .pSpec::before {
+	content: "規格 ";
+}
+#productDetl .pDesc::before {
+	content: "說明 ";
+}
+#productDetl .contain .pPrice {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	font-size: 32px;
+	color: hsl(10, 70%, 60%);
+}
+
+#addCart {
+	position: absolute;
+	bottom: 0;
+	display: block;
+	padding: 8px;
+	border-radius: 10px;
+	line-height: 30px;
+	font-size: 26px;
+	color: hsl(200, 60%, 70%);
+	background: hsl(20, 50%, 25%);
+	border: 1px solid hsl(30, 35%, 60%);
+}
+#addCart:hover {
+	color: hsl(200, 70%, 90%);
+	background: hsl(20, 50%, 35%);
+}
+#addCart svg {
+	height: 26px;
+	width: 26px;
+	margin-right: 8px;
+	color: hsl(30, 75%, 85%);
+}
+
+#cartIcon {
+	display: block;
+	position: fixed;
+	right: 25px;
+	bottom: 90px;
+	/* height: 42px;
+	width: 42px; */
+	padding: 16px;
+	border-radius: 50%;
+	background-color: #fff;
+	color: hsl(30, 75%, 85%);
+	border: 2px solid #000;
+}
+#cartIcon #pNum {
+	display: block;
+	position: absolute;
+	right: -12px;
+	top: -12px;
+	background-color: #fff;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	padding: 8px;
+	text-align: center;
+	color: #f00;
+}
+#cartIcon svg {
+	height: 40px;
+	width: 40px;
+	background-color: #fff;
+	color: hsl(30, 75%, 85%);
+}
+#closeList {
+	position: relative;
+	display: inline-block;
+	color: #000;
+	background-color: #ddd;
+	border-radius: 50%;
+	font-size: 24px;
+	padding: 10px;
+	margin-bottom: 16px;
+}
+#cartList {
+	position: fixed;
+	right: -300px;
+	top: 60px;
+	height: 100%;
+	width: 300px;
+	background-color: #eee;
+	transition: transform 0.5s;
+}
+#cartList .cartItem {
+	margin: 4px;
+	padding: 6px 6px;
+	border: 1px solid #999;
+}
+#cartList .cartItem span {
+	margin-right: 8px;
+}
+#cartList .cartItem span:nth-of-type(2) {
+	color: #f66;
+}
+#cartList .cartItem:hover {
+	background-color: #aaa;
+}

@@ -100,9 +100,9 @@ footer #copyright {
 #gotop {
 	background-color: hsla(10, 50%, 25%, 0.2);
 	border: 1px solid #999;
-	color: hsl(30, 75%, 75%, 0.5);
+	color: hsla(30, 75%, 75%, 0.5);
 }
 #gotop:hover {
 	background-color: hsla(10, 50%, 25%, 1);
-	color: hsl(30, 75%, 75%, 1);
+	color: hsla(30, 75%, 75%, 1);
 }

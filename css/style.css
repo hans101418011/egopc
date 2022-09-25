@@ -227,6 +227,7 @@ footer
 footer {
 	background-color: hsl(10, 50%, 20%);
 	border-top: 1px solid #f2c48d;
+	margin-top: 8px;
 }
 footer #sitemap {
 	background-color: hsl(10, 50%, 25%);
@@ -267,51 +268,12 @@ footer #copyright {
 }
 #gotop:hover {
 	background-color: hsla(10, 50%, 25%, 1);
-	color: hsl(30, 75%, 75%, 1);
+	color: hsla(30, 75%, 75%, 1);
 }
 
 main > h3 {
 	font-size: 24px;
 	margin: 16px;
-}
-#productDetl {
-	width: 80%;
-	margin: 16px auto;
-	display: flex;
-	flex-direction: row;
-	font-size: 22px;
-}
-#productDetl .pImg {
-}
-
-#productDetl .contain {
-	position: relative;
-	width: 50%;
-	padding: 8px;
-}
-#productDetl .contain .pName {
-	font-size: 32px;
-}
-#productDetl .pName::before {
-	content: "品名 ";
-}
-#productDetl .contain .pSpec,
-.pDesc {
-	padding-top: 16px;
-	font-size: 28px;
-}
-#productDetl .pSpec::before {
-	content: "規格 ";
-}
-#productDetl .pDesc::before {
-	content: "說明 ";
-}
-#productDetl .contain .pPrice {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	font-size: 32px;
-	color: hsl(10, 70%, 60%);
 }
 
 /*--------------------

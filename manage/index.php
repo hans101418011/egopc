@@ -2,6 +2,8 @@
 include_once('../comm/dbo.php');
 if(!isset($_SESSION)){
 	session_start();
+
+    
 }
 
 ?>
