@@ -1,0 +1,108 @@
+@charset "UTF-8";
+body {
+	background-color: #3e1b15;
+	color: #f2c48d;
+}
+a {
+	color: #f2c48d;
+}
+
+.container {
+	background-color: #3e1b15;
+}
+header {
+	background-color: #3e1b15;
+}
+#menu {
+	border: 1px solid #666;
+}
+
+nav {
+	background-color: #3e1b15;
+}
+nav a {
+	background-color: #3e1b15;
+}
+nav a:hover {
+	background-color: #70423c;
+}
+/* -----------
+*   prod  
+*   
+*   images 456px * 456px
+------------ */
+section.prod {
+}
+section.prod h3 {
+}
+section.prod div {
+}
+section.prod img {
+}
+section.prod .prod_name {
+	color: #024873;
+}
+section.prod div:hover .prod_name {
+	color: #0a7aa6;
+}
+section.prod .prod_price {
+	color: #f00;
+}
+
+/* ---------
+news
+--------- */
+section.news h3 {
+}
+section.news {
+}
+section.news > div:nth-child(2n) {
+	background-color: #70423c;
+}
+section.news > div:nth-child(2n + 1) {
+	background-color: #70423c;
+}
+section.news div {
+}
+section.news div img {
+}
+section.news div .right {
+}
+section.news .right p {
+}
+section.news .news_titl {
+}
+section.news .news_date {
+	color: hsl(30, 75%, 75%);
+}
+section.news .news_cont {
+	color: hsl(30, 75%, 75%);
+}
+/* -----------
+footer 
+------------ */
+footer {
+	background-color: #3e1b15;
+}
+footer #sitemap {
+	background-color: #3e1b15;
+}
+footer #sitemap dl {
+}
+footer #sitemap dl dt {
+}
+footer #copyright {
+	display: block;
+	padding: 16px;
+	color: #f2c48d;
+}
+/* go Top */
+#gotop {
+	background-color: hsla(10, 50%, 25%, 0.2);
+	border: 1px solid #999;
+	color: hsl(30, 75%, 75%, 0.5);
+}
+#gotop:hover {
+	background-color: hsla(10, 50%, 25%, 1);
+	color: hsl(30, 75%, 75%, 1);
+}

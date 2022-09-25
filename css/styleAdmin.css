@@ -1,0 +1,98 @@
+main {
+	background-color: hsl(30, 75%, 35%);
+	color: hsl(30, 75%, 80%);
+	padding: 16px;
+}
+h3 {
+	width: 80%;
+	margin: 20px auto;
+	font-size: 28px;
+}
+.msg {
+	width: 80%;
+	margin: 20px auto;
+	padding: 8px;
+	font-size: 20px;
+}
+.info {
+	border: 1px solid hsl(80, 90%, 60%);
+	color: hsl(80, 75%, 80%);
+}
+.err {
+	border: 1px solid hsl(0, 90%, 60%);
+	color: hsl(0, 90%, 70%);
+}
+#productAdd {
+	margin: 20px auto;
+	width: 80%;
+}
+p {
+	margin: 8px;
+	font-size: 18px;
+}
+input {
+	padding: 4px;
+}
+select {
+	padding: 4px;
+	font-size: 16px;
+}
+#previewImg {
+	display: block;
+	width: 200px;
+}
+.formBtn {
+	margin: 16px 0;
+}
+.formBtn input {
+	padding: 4px 16px;
+	font-size: 16px;
+}
+
+#productList {
+	margin: 0 auto;
+}
+#productList .pItem {
+	border: 1px solid hsl(30, 75%, 80%);
+}
+#productList tr th,
+td {
+	border: 1px solid hsl(30, 75%, 80%);
+	text-align: center;
+	vertical-align: middle;
+	padding: 8px;
+}
+#productList .pItem img {
+	height: 100px;
+}
+.editBtn,
+.delBtn,
+.addBtn {
+	padding: 4px;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 14px;
+	line-height: 14px;
+}
+.editBtn {
+	background-color: hsl(80, 60%, 20%);
+}
+.delBtn {
+	background-color: hsl(0, 60%, 20%);
+}
+.editBtn:hover {
+	background-color: hsl(80, 60%, 30%);
+}
+.delBtn:hover {
+	background-color: hsl(0, 60%, 30%);
+}
+.addBtn {
+	background-color: hsl(80, 60%, 20%);
+}
+.addBtn:hover {
+	background-color: hsl(80, 60%, 30%);
+}
+.prodControl {
+	margin: 16px auto;
+	width: 70%;
+}

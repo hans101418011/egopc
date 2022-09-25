@@ -1,0 +1,1 @@
+<div id="copyright">Copyright&copy; 2022. Some rights reserved.</div>
