@@ -10,8 +10,12 @@ if(isset($_GET['p_sn'])){
 	$row = $dbo->query($qry)->fetch_array();
 }
 
-$cartList = json_decode($_COOKIE['cartList'],true);
-$pdNum = count($cartList)?count($cartList):'-';
+$pdNum = 0;
+if(isset($_COOKIE['cartList'])){
+	$cartList = json_decode($_COOKIE['cartList'],true);
+	$pdNum = count($cartList);
+}
+
 
 // setcookie("cartList",'',0);
 // unset($_COOKIE["cartList"]);
@@ -49,6 +53,8 @@ $pdNum = count($cartList)?count($cartList):'-';
 							console.log(html);
 							pdNum++;
 							$("#cartList").append(html);
+							console.log(pdNum);
+							$("#pNum").text(pdNum);
 							alert("加入購物車成功");
 						}else if(status=="404"){
 							alert("商品不存在或已下架");
@@ -59,7 +65,6 @@ $pdNum = count($cartList)?count($cartList):'-';
 						}
 					}
 				});
-				$("#pNum").text(pdNum);
 				
 				return false;
 			});
@@ -112,7 +117,6 @@ $pdNum = count($cartList)?count($cartList):'-';
 				$qry='select * from `product` where `p_sn`='.$p_sn.' limit 0,1';
 				$p_sn = $dbo->real_escape_string($_GET['p_sn']);
 				$row = $dbo->query($qry)->fetch_array();
-				$html.='<div class="cartItem">';
 				$html = '<div class="cartItem" data-psn="'.$p_sn.'">';
 				$html .= '<span>'.$row['p_cname'].'</span>';
 				if(isset($row['p_discount'])){
@@ -125,6 +129,7 @@ $pdNum = count($cartList)?count($cartList):'-';
 				echo $html;
 			}
 		?>
+		<div class="listBtn"><a id="checkout" href="cart.php">前往購物清單</a><a id="claerCart" href="clearCart.php?p_sn=<?php echo $p_sn; ?>">清空購物清單</a></div>
 	</div>
 </body>
 </html>

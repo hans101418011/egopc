@@ -1,0 +1,59 @@
+#checkout > div {
+	margin: 10px;
+}
+#checkout > div > div {
+	padding: 10px;
+	border-bottom: 1px dashed hsl(30, 75%, 85%);
+	text-align: center;
+}
+#checkout > div > div:hover {
+	background-color: hsla(30, 75%, 45%, 0.5);
+}
+#checkout div div input {
+	margin: 0 20px;
+	padding: 2px;
+	border: none;
+	height: 20px;
+}
+#checkout div div span {
+	display: inline-block;
+	margin: 0 20px;
+	text-align: left;
+}
+#checkout .cname {
+	width: 160px;
+}
+#checkout .spec {
+	width: 20%;
+}
+#checkout .count {
+	width: 40px;
+}
+
+#checkout .price {
+	width: 80px;
+}
+
+#sum {
+	text-align: center;
+	font-size: 24px;
+}
+#pay {
+	text-align: center;
+}
+
+#pay .btn {
+	margin: 0;
+	width: 120px;
+	padding: 10px;
+	font-size: 24px;
+	border-radius: 16px;
+	border: 1px solid hsl(20, 50%, 35%);
+	background-color: hsl(30, 75%, 85%);
+	color: hsl(10, 70%, 60%);
+}
+#pay .btn:hover {
+	background-color: hsl(30, 75%, 55%);
+	color: hsl(30, 75%, 85%);
+	cursor: pointer;
+}

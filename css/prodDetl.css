@@ -107,7 +107,7 @@
 	position: fixed;
 	right: -300px;
 	top: 60px;
-	height: 100%;
+	height: calc(100% - 60px);
 	width: 300px;
 	background-color: #eee;
 	transition: transform 0.5s;
@@ -116,6 +116,7 @@
 	margin: 4px;
 	padding: 6px 6px;
 	border: 1px solid #999;
+	color: hsl(20, 50%, 25%);
 }
 #cartList .cartItem span {
 	margin-right: 8px;
@@ -124,5 +125,25 @@
 	color: #f66;
 }
 #cartList .cartItem:hover {
-	background-color: #aaa;
+	background-color: #bbb;
+}
+
+.listBtn {
+	display: block;
+	width: 100%;
+	position: absolute;
+	bottom: 40px;
+	text-align: center;
+}
+.listBtn a {
+	padding: 16px;
+	margin: 4px;
+	border-radius: 8px;
+	border: 1px solid hsl(20, 50%, 35%);
+	background-color: hsl(30, 75%, 85%);
+	color: hsl(10, 70%, 60%);
+}
+.listBtn a:hover {
+	background-color: hsl(30, 75%, 55%);
+	color: hsl(30, 75%, 85%);
 }
