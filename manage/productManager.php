@@ -4,7 +4,7 @@ if(!isset($_SESSION)){
 	session_start();
 }
 
-$p_status=array(0=>'正常銷售',1=>'無庫存',2=>'停售',3=>'客戶不可見');
+$p_status=array(0=>'正常銷售',1=>'無庫存',2=>'停售',3=>'客戶不可見',4=>'刪除');
 
 $qry = 'select product.*, p_type.* from product join p_type on product.p_type=p_type.type_id';
 $result = $dbo->query($qry);
@@ -17,7 +17,34 @@ $result = $dbo->query($qry);
 	<?php
 		include_once('./_head.html');
 	?>
-	<style></style>
+	<script>
+		$(function(){
+			
+			$('.delBtn').click(function(){
+				var pName = $(this).parent().parent().find(".pName").text();
+				var pID = $(this).attr('data-pid');
+				if(confirm('確認刪除產品: ('+pID+') '+pName+' ?')){
+					var pSN = [];
+					pSN.push(pID);
+					$.ajax({
+						url:'productDel.php',
+						type:'post',
+						data:{'pSN':pSN},
+						error:function(){
+							alert('Requery Error');
+						},
+						success:function(info){
+							// console.log('Delete info: '+info);
+							alert(info);
+							location.reload();
+						}
+					});
+				}
+				return false;
+			});
+				
+		});
+	</script>
 </head>
 <body>
     <div class="container">
@@ -47,7 +74,7 @@ $result = $dbo->query($qry);
 				echo '<td class="pDisc">'.$row['p_discount'].'</td>';
 				echo '<td class="p_spec">'.$row['p_spec'].'</td>';
 				echo '<td class="pStatu">'.$p_status[$row['p_status']].'</td>';
-				echo '<td><a class="editBtn" href="productEdit.php?p_sn='.$row['p_sn'].'">編輯</a> <a class="delBtn" href="" data-pid="'.$row['p_sn'].'">刪除</a></td>';
+				echo '<td><a class="editBtn" href="productEdit.php?p_sn='.$row['p_sn'].'">編輯</a> <a class="delBtn" href="#" data-pid="'.$row['p_sn'].'">刪除</a></td>';
 				echo '</tr>';
 			};
 		?>
