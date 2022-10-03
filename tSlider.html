@@ -1,73 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Test Slider</title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<link rel="stylesheet" href="css/slider.css" />
-		<style>
-			body {
-				background-color: #ccc;
-			}
-			header,
-			footer {
-				background-color: #666;
-				color: #fff;
-				display: block;
-				height: 60px;
-				text-align: center;
-			}
-		</style>
-		<script src="js/jquery-3.3.1.min.js"></script>
-		<script src="js/slider.js"></script>
-		<script>
-			$(function () {
-				// hi
-				$("#slider img:last").on("load", function () {
-					imgNum = $("#banner img").length;
-					console.log($("#banner img").length);
-					$(window).resize();
-				});
-				$("#nextBtn").click(function () {
-					nxSlide();
-					return false;
-				});
-				$("#prevBtn").click(function () {
-					prSlide();
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Test Slider</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+		integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="css/slider.css" />
+	<style>
+		body {
+			background-color: #ccc;
+		}
+
+		header,
+		footer {
+			background-color: #666;
+			color: #fff;
+			display: block;
+			height: 60px;
+			text-align: center;
+		}
+	</style>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/slider.js"></script>
+	<script>
+		$(function () {
+			// hi
+			$("#slider img:last").on("load", function () {
+				var imgNum = $("#banner img").length;
+				// console.log($("#banner img").length);
+				$(window).resize();
+				for (var i = 0; i < imgNum; i++) {
+					$('#chosePoint').append('<a href="#" class="point" data-imgP="' + i + '"></a>');
+				}
+				graphPoint(nowIndex);
+				$('.point').click(function () {
+					clearInterval(sliderAction);
+					var goIndex = $(this).attr('data-imgp');
+					// console.log('go: ' + goIndex + ' , now: ' + nowIndex);
+					if (nowIndex > goIndex) {
+						do {
+							prSlide();
+							// console.log('go: ' + goIndex + ' , now: ' + nowIndex);
+						} while (nowIndex != goIndex);
+					} else if (nowIndex < goIndex) {
+						do {
+							nxSlide();
+							// console.log('go: ' + goIndex + ' , now: ' + nowIndex);
+						} while (nowIndex != goIndex);
+					}
+					sliderAction = setInterval(nxSlide, 4000);
 					return false;
 				});
 			});
-		</script>
-	</head>
-	<body>
-		<div class="container">
-			<header>Header</header>
-			<div id="banner">
-				<div id="slider">
-					<ul>
-						<li>
-							<a href="#"><img src="https://fakeimg.pl/1600x600/333" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="https://fakeimg.pl/1600x600/666" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="https://fakeimg.pl/1600x600/999" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="https://fakeimg.pl/1600x600/ccc" alt="" /></a>
-						</li>
-						<li>
-							<a href="#"><img src="https://fakeimg.pl/1600x600/fff" alt="" /></a>
-						</li>
-					</ul>
-				</div>
-				<a id="prevBtn" href="#">&#8678;</a>
-				<a id="nextBtn" href="#">&#8680;</a>
+
+			$("#nextBtn").click(function () {
+				nxSlide();
+				clearInterval(sliderAction);
+				sliderAction = setInterval(nxSlide, 4000);
+				return false;
+			});
+			$("#prevBtn").click(function () {
+				prSlide();
+				clearInterval(sliderAction);
+				sliderAction = setInterval(nxSlide, 4000);
+				return false;
+			});
+			sliderAction = setInterval(nxSlide, 4000);
+		});
+	</script>
+</head>
+
+<body>
+	<div class="container">
+		<header>Header</header>
+		<div id="banner">
+			<div id="slider">
+				<ul>
+					<li>
+						<a href="#"><img src="https://fakeimg.pl/1600x600/333" /></a>
+					</li>
+					<li>
+						<a href="#"><img src="https://fakeimg.pl/1600x600/666" alt="" /></a>
+					</li>
+					<li>
+						<a href="#"><img src="https://fakeimg.pl/1600x600/999" alt="" /></a>
+					</li>
+					<li>
+						<a href="#"><img src="https://fakeimg.pl/1600x600/ccc" alt="" /></a>
+					</li>
+					<li>
+						<a href="#"><img src="https://fakeimg.pl/1600x600/fff" alt="" /></a>
+					</li>
+				</ul>
 			</div>
-			<footer>Footer</footer>
+			<div id="chosePoint">
+				<!-- <a href="#" class="point"></a>
+				<a href="#" class="point"></a>
+				<a href="#" class="point nowImgPoint"></a> -->
+			</div>
+			<a id="prevBtn" href="#">&#8678;</a>
+			<a id="nextBtn" href="#">&#8680;</a>
 		</div>
-	</body>
+		<footer>Footer</footer>
+	</div>
+</body>
+
 </html>
