@@ -15,7 +15,9 @@ $("#slider img:last").on("load", function () {
 });
 $(window).resize(function () {
 	var winW = $(window).width();
-	imgH = $("#banner img:first").height();
+	// imgH = $("#banner img:first").height();
+	// console.log("winW: " + winW);
+	imgH = (winW / 1600) * 600;
 	imgW = $("#banner img:first").width();
 	imgNum = $("#banner img").length;
 	preIndex = imgNum - 1;

@@ -19,6 +19,7 @@ if(!isset($_SESSION)){
     <link rel="stylesheet" href="css/slider.css">
     <script src="./js/jquery-3.3.1.min.js"></script>
     <script src="./js/slider.js"></script>
+
   </head>
   <body>
     <div class="container">
@@ -36,12 +37,20 @@ if(!isset($_SESSION)){
               <li>
                 <a href="#"><img src="./images/banner-03.png" alt="" /></a>
               </li>
-            </ul>   
+            </ul>
           </div>
           <div id="chosePoint"></div>
-          <a id="prevBtn" href="#">&#171;</a>
-          <a id="nextBtn" href="#">&#187;</a>
+          <a id="prevBtn" href="#">&#8678;</a>
+          <a id="nextBtn" href="#">&#8680;</a>
         </div>
+        <!-- <section id="slider">
+          <div class="album">
+            <a href="#"><img src="./images/banner-01.png" /></a>
+            <a href="#"><img src="./images/banner-02.png" /></a>
+            <a href="#"><img src="./images/banner-03.png" /></a>
+            <a href="#"><img src="./images/banner-01.png" /></a>
+          </div>
+        </section> -->
         <section class="prod">
           <h3>精選商品</h3>
           <?php
@@ -100,7 +109,7 @@ if(!isset($_SESSION)){
     <script>
     $(function () {
 			// hi
-			
+			$("#slider img:last").on("load", function () {
 				var imgNum = $("#banner img").length;
 				// console.log($("#banner img").length);
 				$(window).resize();
@@ -141,7 +150,7 @@ if(!isset($_SESSION)){
 				return false;
 			});
 			sliderAction = setInterval(nxSlide, 4000);
-		
+		});
     </script>
   </body>
 </html>
