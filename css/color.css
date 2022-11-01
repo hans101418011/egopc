@@ -1,30 +1,30 @@
 @charset "UTF-8";
 body {
-	background-color: #3e1b15;
-	color: #f2c48d;
+	background-color: hsl(50, 10%, 90%);
+	color: hsl(190, 70%, 30%);
 }
 a {
-	color: #f2c48d;
+	color: hsl(190, 70%, 30%);
 }
 
 .container {
-	background-color: #3e1b15;
+	background-color: hsl(60, 10%, 95%);
 }
 header {
-	background-color: #3e1b15;
+	background-color: hsl(50, 10%, 90%);
 }
 #menu {
 	border: 1px solid #666;
 }
 
 nav {
-	background-color: #3e1b15;
+	background-color: hsl(50, 10%, 90%);
 }
 nav a {
-	background-color: #3e1b15;
+	background-color: hsl(60, 10%, 95%);
 }
 nav a:hover {
-	background-color: #70423c;
+	background-color: #aaa;
 }
 /* -----------
 *   prod  
@@ -82,10 +82,11 @@ section.news .news_cont {
 footer 
 ------------ */
 footer {
-	background-color: #3e1b15;
+	background-color: hsl(50, 10%, 90%);
+	border-color: hsl(190, 70%, 30%);
 }
 footer #sitemap {
-	background-color: #3e1b15;
+	background-color: hsl(60, 10%, 95%);
 }
 footer #sitemap dl {
 }
@@ -94,15 +95,15 @@ footer #sitemap dl dt {
 footer #copyright {
 	display: block;
 	padding: 16px;
-	color: #f2c48d;
+	color: hsl(190, 70%, 30%);
 }
 /* go Top */
 #gotop {
-	background-color: hsla(10, 50%, 25%, 0.2);
-	border: 1px solid #999;
-	color: hsla(30, 75%, 75%, 0.5);
+	background-color: hsla(200, 50%, 25%, 0.2);
+	/* border: 1px solid #999; */
+	color: hsla(200, 75%, 40%, 0.5);
 }
 #gotop:hover {
-	background-color: hsla(10, 50%, 25%, 1);
-	color: hsla(30, 75%, 75%, 1);
+	background-color: hsla(200, 50%, 25%, 1);
+	color: hsla(200, 75%, 75%, 1);
 }

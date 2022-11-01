@@ -1,5 +1,5 @@
 <div id="logo">
-	<a href="./"><img src="./images/logo-ego_pc.svg" alt="" /></a>
+	<a href="./"><img src="./images/logo-ego_pc-v2.png" alt="logo" /></a>
 </div>
 <nav>
 	<div id="menu">&#9776;</div>
